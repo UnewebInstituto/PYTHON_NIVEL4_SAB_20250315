@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo template</title>
+    {% load static  %}
+   <link rel="stylesheet" href="{% static 'css/fecha_actual.css' %}">
+</head>
+<body>
+    <h1>ejemplo de template y context</h1>
+    <h2>fecha actual: </h2>
+    <p>hoy es: {{fecha_actual_tmp}}</p>
+    
+</body>
+</html>

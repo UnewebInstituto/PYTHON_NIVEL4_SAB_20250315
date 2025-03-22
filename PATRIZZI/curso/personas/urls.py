@@ -17,8 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from personas.views import hola
+from personas.views import inicio
+
+from personas.views import obtener_fecha_actual
+
+from personas.views import principal
+
+from personas.views import personas_ingresar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ruta_saludo/', hola),
+    path('inicio/', inicio),
+    path('fecha_actual/',obtener_fecha_actual),
+    path('',principal),
+    path('personas_ingresar/',personas_ingresar),
+    
 ]
+#from personas.views import inicio1
+#path('', inicio1),

@@ -18,10 +18,18 @@ from django.contrib import admin
 from django.urls import path
 
 from personas.views import hola
-
+from personas.views import inicio
+from personas.views import fecha_actual_nueva
+from personas.views import principal
+from personas.views import personas_ingresar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ruta_saludo/', hola)
-    
+    path('ruta_saludo/', hola),
+    path('inicio/', inicio),
+    path('fecha_actual/', fecha_actual_nueva),
+    path('',principal),
+    path('personas_ingresar/', personas_ingresar),
+
+     
 ]
