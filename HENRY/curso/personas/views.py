@@ -2,6 +2,8 @@ from django.http import HttpResponse
 import datetime
 from django.shortcuts import render
 
+from prueba.models import Contactos
+
 def inicio(request):
     return HttpResponse('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body>  <h1>Plantilla HTML</h1><p>Contenido a mostrar: Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet suscipit odit quasi veniam? Natus libero iste ab ratione, delectus dolore commodi perferendis voluptas atque voluptatem vitae quisquam consectetur voluptatibus rem suscipit consequuntur doloribus voluptate quidem, laborum impedit blanditiis, nesciunt assumenda aliquid. Similique at quidem earum cupiditate asperiores cumque quisquam facere!</p></body></html>')
 
@@ -24,3 +26,18 @@ def principal(request):
 
 def personas_ingresar(request):
   return render(request,'ingresar.html')
+
+def personas_ingresar01(request):
+    mensajes = []
+    if request.method == 'POST':
+        nom = request.POST.get('nombre')
+        ape = request.POST.get('apellido')
+        cor = request.POST.get('correo')
+        tel = request.POST.get('telefono')
+
+        nvo_contacto = Contactos(nombre=nom, apellido=ape, correo=cor, telefono=tel)
+
+        nvo_contacto.save()
+        
+        mensajes.append('Contacto ingresado con éxito')
+        return render(request, 'ingresar.html',{'mensajes':mensajes})

@@ -22,6 +22,7 @@ from personas.views import obtener_fecha_actual
 from personas.views import principal
 #from personas.views import inicio1
 from personas.views import personas_ingresar
+from personas.views import personas_ingresar01
 
 urlpatterns = [
     path('inicio/', inicio),
@@ -30,5 +31,6 @@ urlpatterns = [
     path('ruta_saludo/', hola),
     path('', principal),
     path('personas_ingresar/', personas_ingresar),
+    path('personas_ingresar01/', personas_ingresar01),
 ]
 #path('', inicio1),

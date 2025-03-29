@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'prueba',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ DATABASES = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "personas_hd",        # Nombre de la base de datos
+        "NAME": "personas_hd1",        # Nombre de la base de datos
         "USER": "postgres",        # Usuario de la base de datos
         "PASSWORD": "123456",      # Contraseña del usuario
         "HOST": "localhost",       # Servidor de la base de datos

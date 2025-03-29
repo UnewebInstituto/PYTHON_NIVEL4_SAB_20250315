@@ -2,17 +2,28 @@
 {% include 'encabezado.html' %}
 
 
-<form action="/personas_ingresar01/">
-  <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
+<form action="/personas_ingresar01/" method = "POST">  
+  {% csrf_token %}
+ <div  class="row">
+    <div class="form-group col-md-6">
+      <label for="nombre">nombre:</label>
+      <input type="text" class="form-control" id="nombre" name ="nombre">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="apellido">apellido:</label>
+      <input type="text" class="form-control" id="apellido" name ="apellido">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
+ 
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="correo">correo:</label>
+      <input type="email" class="form-control" id="correo" name ="correo">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="telefono">telefono:</label>
+      <input type="text" class="form-control" id="telefono" name ="telefono">
+    </div>
   </div>
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

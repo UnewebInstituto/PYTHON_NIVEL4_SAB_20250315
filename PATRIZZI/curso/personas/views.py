@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from prueba.models import contactos
 import datetime
 
 def inicio(request):
@@ -24,3 +25,15 @@ def principal(request):
 
 def personas_ingresar(request):
   return render(request,'ingresar.html')
+def personas_ingresar01(request):
+  mensajes = []
+  if request.method == 'POST':
+    nom = request.POST.get('nombre')
+    ape = request.POST.get('apellido')
+    cor = request.POST.get('correo')
+    tel = request.POST.get('telefono')
+    nvo_contacto = contactos(nombre=nom,apellido=ape,correo=cor,telefono=tel)
+    nvo_contacto.save()
+    mensajes.append('Contacto ha ingresado con Exito')
+    return render(request, 'ingresar.html',{'mensajes':mensajes})
+    

@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import datetime
+from prueba.models import contactos
 
 #def inicio(requerir):
 #    #quiero retornar el contenido del archivo
@@ -27,3 +28,15 @@ def principal(requerido):
 
 def personas_ingresar(requerido):
   return render(requerido, 'ingresar.html')
+
+def personas_ingresar01(requerido):
+  mensajes = []
+  if requerido.method == 'POST':
+    tnombre = requerido.POST.get('nombre')
+    tapellido = requerido.POST.get('apellido')
+    tcorreo  = requerido.POST.get('correo')
+    ttelefono = requerido.POST.get('telefono')
+    nuevocontacto = contactos(nombre=tnombre,apellido=tapellido, correo=tcorreo, telefono=ttelefono)
+    nuevocontacto.save()
+    mensajes.append('Contacto agregado OK')
+    return render(requerido, 'ingresar.html', {'mensajes': mensajes})
