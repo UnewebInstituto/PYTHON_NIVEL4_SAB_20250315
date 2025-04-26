@@ -8,6 +8,7 @@ git push -u origin main
 
 git config --global core.autocrlf true
 
+   git remote remove origin
 
 git remote add origin https://github.com/UnewebInstituto/PYTHON_NIVEL4_SAB_20250315.git
 git branch -M main

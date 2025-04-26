@@ -1,0 +1,33 @@
+<!-- incluir encabezado -->
+{% include 'encabezado.html' %}
+
+<div>
+    {% if datos %}
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in datos %}
+                    <tr>
+                        <td>{{dato.nombre}}</td>
+                        <td>{{dato.apellido}}</td>
+                        <td>{{dato.telefono}}</td>
+                        <td>{{dato.correo}}</td>
+                        <td><a href="/personas_actualizar01/?id={{dato.id}}" class="btn btn-danger">Actualizar</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-info"><strong>Atención: </strong>No hay contactos registrados.</div>
+    {% endif %}
+</div>
+<!-- incluir pie -->
+{% include 'pie.html' %}

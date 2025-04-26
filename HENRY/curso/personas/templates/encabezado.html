@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <script src="{% static 'jquery/jquery.min.js' %}"></script>
-<script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/reporte_json.js' %}"></script>
     <title>Proyecto Personas</title>
 </head>
 <body>
@@ -18,12 +20,13 @@
                 <a class="navbar-brand" href="#">Personas</a>
               </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="personas_ingresar/">Ingresar</a></li>
-                <li><a href="#">Consultar</a></li>
-                <li><a href="#">Borrar</a></li>
-                <li><a href="#">Actualizar</a></li>
-                <li><a href="#">Reportes</a></li>
+                <li class="active"><a href="/">Inicio</a></li>
+                <li><a href="/personas_ingresar/">Ingresar</a></li>
+                <li><a href="/personas_consultar/">Consultar</a></li>
+                <li><a href="/personas_borrar/">Borrar</a></li>
+                <li><a href="/personas_actualizar/">Actualizar</a></li>
+                <li><a href="/personas_reporte/">Reporte</a></li>
+                <li><a href="/personas_procesa_json/">Reporte JSON</a></li>
               </ul>
             </div>
           </nav>
